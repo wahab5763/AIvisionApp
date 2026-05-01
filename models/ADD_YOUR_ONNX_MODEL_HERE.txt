@@ -1,0 +1,1 @@
+Place yolo11n.onnx here, or run python setup_model.py

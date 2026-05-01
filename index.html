@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live AI Eye Pro</title>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="tapCommandLayer" aria-label="Tap anywhere to speak a command"></div>
+  <header>
+    <h1>👁️ Live AI Eye Pro</h1>
+    <p>YOLO11n ONNX + Groq Natural Narration + Voice Commands for Blind Assistance</p>
+  </header>
+  <main class="container">
+    <section class="video-box">
+      <video id="video" autoplay muted playsinline></video>
+      <canvas id="canvas"></canvas>
+    </section>
+    <aside class="panel">
+      <div class="warning">Prototype assistive system. Do not rely on it for roads, traffic, stairs, cooking, vehicles, or dangerous situations.</div>
+      <div class="access-box"><strong>Blind-friendly control:</strong><br>Tap anywhere and say: “start camera and audio”, “ask question”, “describe surroundings”, “stop everything”, or “help”.</div>
+      <button class="start" onclick="startCamera()">Start Camera</button>
+      <button class="voice" onclick="startNarration()">Start Audio Narration</button>
+      <button class="voice" onclick="startCameraAndNarration()">Start Camera + Audio</button>
+      <button class="stop" onclick="stopAll()">Stop Camera & Audio</button>
+      <h2>Live Natural Description</h2>
+      <div id="description" class="box">Camera has not started yet.</div>
+      <h2>Detected Objects</h2>
+      <div id="objects" class="box">No objects detected yet.</div>
+      <h2>Voice Question Assistant</h2>
+      <button class="voice" onclick="startVoiceQuestion()">Ask by Voice</button>
+      <div id="voiceStatus" class="box">Tap anywhere and say a command, or press “Ask by Voice”.</div>
+      <div id="heardQuestion" class="box">Your spoken command or question will appear here.</div>
+      <div id="answer" class="box">Voice answer will appear here.</div>
+      <h2>Status</h2>
+      <div id="status" class="box">Ready. Tap anywhere and say “help”.</div>
+    </aside>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>
